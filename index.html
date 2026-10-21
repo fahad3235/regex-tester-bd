@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regex Tester BD - Live Regular Expression Tester</title>
+<meta name="description" content="Offline bilingual EN/Bangla live regular expression tester. Uses the real JavaScript RegExp engine. Nothing leaves your device.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>Regex Tester BD</h1>
+    <p class="tagline" data-i18n="tagline"></p>
+    <div class="top-actions">
+      <button id="lang-btn" type="button" data-i18n="langBtn"></button>
+      <button id="clear-btn" type="button" data-i18n="clearBtn"></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card" aria-label="Pattern">
+    <label class="lbl" for="pattern" data-i18n="pattern"></label>
+    <input id="pattern" type="text" autocomplete="off" spellcheck="false"
+           data-i18n="patternHint" data-i18n-ph="1" aria-describedby="pattern-hint">
+    <p class="hint" id="pattern-hint">JavaScript (ECMAScript) regular expressions, run by your browser's real RegExp engine.</p>
+    <fieldset>
+      <legend data-i18n="flags"></legend>
+      <div class="flags">
+        <label><input type="checkbox" id="flag-g" checked> <span>g</span> <span class="flag-desc" id="flag-label-g"></span></label>
+        <label><input type="checkbox" id="flag-i"> <span>i</span> <span class="flag-desc" id="flag-label-i"></span></label>
+        <label><input type="checkbox" id="flag-m"> <span>m</span> <span class="flag-desc" id="flag-label-m"></span></label>
+        <label><input type="checkbox" id="flag-s"> <span>s</span> <span class="flag-desc" id="flag-label-s"></span></label>
+        <label><input type="checkbox" id="flag-u"> <span>u</span> <span class="flag-desc" id="flag-label-u"></span></label>
+        <label><input type="checkbox" id="flag-y"> <span>y</span> <span class="flag-desc" id="flag-label-y"></span></label>
+      </div>
+    </fieldset>
+    <p class="error" id="error" hidden role="alert"></p>
+  </section>
+
+  <section class="card" aria-label="Test text">
+    <label class="lbl" for="test-text" data-i18n="testText"></label>
+    <textarea id="test-text" rows="5" data-i18n="testTextHint" data-i18n-ph="1"></textarea>
+  </section>
+
+  <section class="card" aria-label="Results">
+    <h2><span data-i18n="highlighted"></span> <span class="count" id="match-count"></span></h2>
+    <pre class="highlight" id="highlight" aria-live="polite"></pre>
+    <p class="muted small" id="capped-note" hidden></p>
+    <h3 data-i18n="matchList"></h3>
+    <div id="match-list"></div>
+  </section>
+
+  <section class="card" aria-label="Replace">
+    <label class="check"><input type="checkbox" id="replace-toggle"> <span data-i18n="replaceMode"></span></label>
+    <div id="replace-panel" hidden>
+      <label class="lbl" for="replacement" data-i18n="replacement"></label>
+      <input id="replacement" type="text" autocomplete="off" spellcheck="false"
+             data-i18n="replacementHint" data-i18n-ph="1">
+      <p class="error" id="replace-error" hidden role="alert"></p>
+      <h3 data-i18n="replaced"></h3>
+      <pre class="output" id="replace-output"></pre>
+      <button id="copy-btn" type="button" data-i18n="copyBtn"></button>
+    </div>
+  </section>
+
+  <section class="card" aria-label="Pattern library">
+    <h2 data-i18n="library"></h2>
+    <p class="muted" data-i18n="libraryNote"></p>
+    <div class="lib-grid" id="library"></div>
+  </section>
+
+  <section class="card" aria-label="Cheat sheet">
+    <h2 data-i18n="cheat"></h2>
+    <table class="cheat">
+      <thead><tr><th data-i18n="token"></th><th data-i18n="meaning"></th></tr></thead>
+      <tbody id="cheat-body"></tbody>
+    </table>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p>Regex Tester BD - offline, no account, no server. Patterns run in your browser with the JavaScript RegExp engine.</p>
+</footer>
+
+<script src="js/logic.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
